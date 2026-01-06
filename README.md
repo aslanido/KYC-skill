@@ -1,10 +1,62 @@
-# KYC Officer Skill for Claude
+# KYC Skills for Claude
 
-A comprehensive Claude skill that transforms Claude into a professional KYC (Know Your Customer) Officer at a Tier 1 international bank. This skill implements a deterministic, workflow-driven approach to customer onboarding and due diligence, following global AML/CFT regulations.
+This repository contains **two complementary KYC (Know Your Customer) skills** for Claude, designed for different use cases:
 
-## Overview
+| Skill | Purpose | Complexity | Time |
+|-------|---------|------------|------|
+| **[kyc-analysis](#kyc-analysis-skill)** | Quick research & screening | Lightweight | 2-5 min |
+| **[kyc-officer](#kyc-officer-skill)** | Full regulatory onboarding workflow | 23-state engine | 15-30 min |
 
-The KYC Officer skill provides:
+---
+
+## KYC Analysis Skill
+
+**Location:** `/kyc-analysis/SKILL.md`
+
+A lightweight, investigator-style due diligence tool for quick background checks and entity screening.
+
+### When to Use
+
+- ✅ Quick "who is this company?" research
+- ✅ Pre-meeting background checks
+- ✅ Initial screening before formal onboarding
+- ✅ Due diligence on counterparties/vendors
+- ✅ Batch entity screening
+- ✅ Structured data export (JSON)
+
+### Output
+
+Generates two files per analysis:
+- `kyc_[entity]_report.md` — Narrative report with executive summary, risk rating, red flags
+- `kyc_[entity]_data.json` — Structured data for systems integration
+
+### Quick Start
+
+```
+Run KYC analysis on [Company Name]
+```
+
+See [`kyc-analysis/README.md`](kyc-analysis/README.md) for full documentation.
+
+---
+
+## KYC Officer Skill
+
+**Location:** `/.claude/skills/kyc-officer/skill.md`
+
+A comprehensive skill that transforms Claude into a professional KYC Officer at a Tier 1 international bank. Implements a deterministic, workflow-driven approach to customer onboarding following global AML/CFT regulations.
+
+### When to Use
+
+- ✅ Formal customer onboarding workflows
+- ✅ Regulatory-compliant KYC procedures
+- ✅ Interactive customer interviews
+- ✅ Enhanced Due Diligence (EDD) scenarios
+- ✅ MLRO escalation and decision documentation
+- ✅ Training compliance officers
+- ✅ Full audit trail requirements
+
+### Features
 
 - **23-state workflow engine** with deterministic execution following a state machine pattern
 - **Comprehensive compliance coverage** (BSA, PATRIOT Act, FinCEN CDD, FATF Recommendations, Wolfsberg Principles)
@@ -13,8 +65,6 @@ The KYC Officer skill provides:
 - **Parallel screening execution** (Sanctions, PEP, Adverse Media, Enforcement)
 - **Enhanced Due Diligence (EDD) procedures** for elevated-risk customers
 - **Complete audit trail** with state transitions and decision documentation
-
-## Features
 
 ### Workflow-Driven Architecture
 
@@ -255,41 +305,7 @@ This is an experimental skill for Claude Code. Enhancements welcome:
 - **Wolfsberg Group**: https://www.wolfsberg-principles.com/
 - **OFAC Sanctions Lists**: https://sanctionssearch.ofac.treas.gov/
 
-## KYC Skills Comparison
-
-This repository contains two complementary KYC skills with different purposes:
-
-### Quick Comparison
-
-| Aspect | kyc-analysis | kyc-officer |
-|--------|--------------|-------------|
-| **Location** | `/kyc-analysis/SKILL.md` | `/.claude/skills/kyc-officer/skill.md` |
-| **Purpose** | Quick research & screening | Full regulatory onboarding |
-| **Complexity** | Lightweight, single-pass | 23-state workflow engine |
-| **Approach** | Investigator mindset | Compliance officer procedure |
-| **Output** | Report (.md) + Data (.json) | Full audit trail + decision report |
-| **Interaction** | Minimal. Just provide entity name | Interactive customer dialogue |
-| **States** | None (freeform) | 23 defined states |
-| **Time** | ~2-5 minutes | ~15-30 minutes |
-
-### When to Use Each
-
-#### Use `kyc-analysis` for:
-- ✅ Quick "who is this company?" research
-- ✅ Pre-meeting background checks
-- ✅ Initial screening before formal onboarding
-- ✅ Due diligence on counterparties/vendors
-- ✅ Batch entity screening
-- ✅ Structured data export (JSON)
-
-#### Use `kyc-officer` for:
-- ✅ Formal customer onboarding workflows
-- ✅ Regulatory-compliant KYC procedures
-- ✅ Interactive customer interviews
-- ✅ Enhanced Due Diligence (EDD) scenarios
-- ✅ MLRO escalation and decision documentation
-- ✅ Training compliance officers
-- ✅ Full audit trail requirements
+## Skills Comparison
 
 ### Output Comparison
 
