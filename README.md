@@ -255,6 +255,98 @@ This is an experimental skill for Claude Code. Enhancements welcome:
 - **Wolfsberg Group**: https://www.wolfsberg-principles.com/
 - **OFAC Sanctions Lists**: https://sanctionssearch.ofac.treas.gov/
 
+## KYC Skills Comparison
+
+This repository contains two complementary KYC skills with different purposes:
+
+### Quick Comparison
+
+| Aspect | kyc-analysis | kyc-officer |
+|--------|--------------|-------------|
+| **Location** | `/kyc-analysis/SKILL.md` | `/.claude/skills/kyc-officer/skill.md` |
+| **Purpose** | Quick research & screening | Full regulatory onboarding |
+| **Complexity** | Lightweight, single-pass | 23-state workflow engine |
+| **Approach** | Investigator mindset | Compliance officer procedure |
+| **Output** | Report (.md) + Data (.json) | Full audit trail + decision report |
+| **Interaction** | Minimal. Just provide entity name | Interactive customer dialogue |
+| **States** | None (freeform) | 23 defined states |
+| **Time** | ~2-5 minutes | ~15-30 minutes |
+
+### When to Use Each
+
+#### Use `kyc-analysis` for:
+- ✅ Quick "who is this company?" research
+- ✅ Pre-meeting background checks
+- ✅ Initial screening before formal onboarding
+- ✅ Due diligence on counterparties/vendors
+- ✅ Batch entity screening
+- ✅ Structured data export (JSON)
+
+#### Use `kyc-officer` for:
+- ✅ Formal customer onboarding workflows
+- ✅ Regulatory-compliant KYC procedures
+- ✅ Interactive customer interviews
+- ✅ Enhanced Due Diligence (EDD) scenarios
+- ✅ MLRO escalation and decision documentation
+- ✅ Training compliance officers
+- ✅ Full audit trail requirements
+
+### Output Comparison
+
+| Output | kyc-analysis | kyc-officer |
+|--------|--------------|-------------|
+| Executive summary | ✅ 1 paragraph | ✅ Full section |
+| Risk score | ✅ 0-100 | ✅ 0-100 |
+| Risk rating | ✅ LOW/MEDIUM/HIGH/CRITICAL | ✅ LOW/MEDIUM/HIGH/PROHIBITED |
+| Screening results | ✅ Summary | ✅ Detailed with audit trail |
+| Red flags | ✅ Listed | ✅ Analyzed with severity |
+| Recommendation | ✅ Brief | ✅ Full with conditions |
+| JSON export | ✅ Yes | ❌ No |
+| Workflow audit trail | ❌ No | ✅ Full state transitions |
+| Customer communication | ❌ No | ✅ Letters and dialogue |
+| EDD procedures | ❌ No | ✅ Full EDD workflow |
+| MLRO escalation | ❌ No | ✅ Built-in |
+
+### Workflow Diagram
+
+```
+                    ┌─────────────────────┐
+                    │   Entity to Check   │
+                    └──────────┬──────────┘
+                               │
+              ┌────────────────┴────────────────┐
+              │                                 │
+              ▼                                 ▼
+    ┌─────────────────┐              ┌─────────────────────┐
+    │  kyc-analysis   │              │    kyc-officer      │
+    │  (Quick Check)  │              │  (Full Onboarding)  │
+    └────────┬────────┘              └──────────┬──────────┘
+             │                                  │
+             ▼                                  ▼
+    ┌─────────────────┐              ┌─────────────────────┐
+    │ • Web research  │              │ • 23-state workflow │
+    │ • Risk scoring  │              │ • Customer dialogue │
+    │ • Report + JSON │              │ • EDD procedures    │
+    └────────┬────────┘              │ • MLRO escalation   │
+             │                       │ • Full audit trail  │
+             ▼                       └──────────┬──────────┘
+    ┌─────────────────┐                         │
+    │ 2 output files: │                         ▼
+    │ • report.md     │              ┌─────────────────────┐
+    │ • data.json     │              │ Decision Report:    │
+    └─────────────────┘              │ • APPROVE           │
+                                     │ • APPROVE + EDD     │
+                                     │ • REJECT            │
+                                     └─────────────────────┘
+```
+
+### Example Use Case Flow
+
+1. **Initial screening** → Use `kyc-analysis` for quick background check
+2. **Decision to proceed** → If clean, initiate formal onboarding
+3. **Formal onboarding** → Use `kyc-officer` for full workflow
+4. **Periodic review** → Use `kyc-analysis` for refresh checks
+
 ## License
 
 This skill is provided for educational and training purposes. Ensure compliance with all applicable laws and regulations in your jurisdiction.
@@ -263,4 +355,4 @@ This skill is provided for educational and training purposes. Ensure compliance 
 
 **Version**: 1.0.0
 **Author**: KYC Compliance Team
-**Last Updated**: 2024
+**Last Updated**: January 2026
