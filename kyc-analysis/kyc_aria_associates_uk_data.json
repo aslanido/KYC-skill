@@ -1,0 +1,203 @@
+{
+  "report_metadata": {
+    "report_id": "KYC-2026-0105-ARIA",
+    "report_date": "2026-01-05",
+    "analyst": "Claude KYC Analysis",
+    "version": "1.0"
+  },
+  "entity": {
+    "legal_name": "Aria Associates Limited",
+    "trading_names": [],
+    "company_number": "09368605",
+    "jurisdiction": "England & Wales",
+    "incorporation_date": "2014-12-29",
+    "entity_type": "Private Limited Company",
+    "status": "Active",
+    "company_size": "Micro Entity",
+    "sic_codes": ["70229", "74909", "78109", "82990"],
+    "sic_descriptions": [
+      "Management consultancy activities other than financial management",
+      "Other professional, scientific and technical activities n.e.c.",
+      "Other activities of employment placement agencies",
+      "Other business support service activities n.e.c."
+    ],
+    "registered_address": {
+      "line1": "51 Creighton Road",
+      "city": "London",
+      "postal_code": "W5 4SH",
+      "country": "United Kingdom"
+    },
+    "trading_address": null,
+    "website": null,
+    "phone": null,
+    "email": null
+  },
+  "ownership": {
+    "structure_type": "Single Owner",
+    "structure_complexity": "Simple",
+    "ubos": [
+      {
+        "name": "Mohammad Ali Rejal",
+        "title": "Dr",
+        "dob_year": 1942,
+        "dob_month": 9,
+        "nationality": "British",
+        "country_of_residence": "England",
+        "occupation": "Consultant",
+        "ownership_percentage": "75%+",
+        "voting_rights_percentage": "75%+",
+        "control_type": ["shares", "voting_rights"],
+        "pep_status": false,
+        "sanctions_hit": false,
+        "adverse_media": false
+      }
+    ],
+    "corporate_shareholders": []
+  },
+  "directors": [
+    {
+      "name": "Mohammad Ali Rejal",
+      "title": "Dr",
+      "role": "Director",
+      "appointed_date": "2014-12-29",
+      "nationality": "British",
+      "country_of_residence": "England",
+      "dob_year": 1942,
+      "dob_month": 9,
+      "occupation": "Consultant",
+      "other_directorships": [
+        {
+          "status": "Resigned",
+          "period": "2016-2019"
+        },
+        {
+          "status": "Resigned",
+          "period": "2017-2018"
+        }
+      ],
+      "sanctions_hit": false,
+      "pep_status": false,
+      "adverse_media": false
+    }
+  ],
+  "screening_results": {
+    "sanctions": {
+      "ofac_sdn": false,
+      "un_sanctions": false,
+      "eu_sanctions": false,
+      "uk_hmt": false,
+      "screening_date": "2026-01-05",
+      "entities_screened": ["Aria Associates Limited", "Mohammad Ali Rejal"]
+    },
+    "pep": {
+      "peps_identified": false,
+      "details": []
+    },
+    "adverse_media": {
+      "hits_found": false,
+      "categories_checked": ["fraud", "money_laundering", "corruption", "regulatory_action", "litigation"],
+      "details": []
+    },
+    "enforcement": {
+      "actions_found": false,
+      "details": []
+    }
+  },
+  "red_flags": [],
+  "risk_assessment": {
+    "overall_rating": "LOW",
+    "overall_score": 28,
+    "score_breakdown": {
+      "screening_risk": {
+        "weight": 0.40,
+        "score": 0,
+        "weighted_score": 0
+      },
+      "jurisdictional_risk": {
+        "weight": 0.25,
+        "score": 15,
+        "weighted_score": 3.75
+      },
+      "business_activity_risk": {
+        "weight": 0.25,
+        "score": 20,
+        "weighted_score": 5
+      },
+      "ownership_transparency": {
+        "weight": 0.10,
+        "score": 25,
+        "weighted_score": 2.5
+      }
+    },
+    "adjustments": [],
+    "risk_factors": [],
+    "mitigating_factors": [
+      "11-year operating history",
+      "Clean sanctions screening",
+      "No PEP connections",
+      "No adverse media",
+      "UK jurisdiction (FATF compliant)",
+      "Stable directorship since incorporation",
+      "Compliant with Companies House filings",
+      "Simple ownership structure"
+    ],
+    "considerations": [
+      "Director age (83) - succession risk",
+      "Limited financial disclosure (micro entity)",
+      "Minimal public business presence"
+    ]
+  },
+  "financial_profile": {
+    "status": "Micro Entity",
+    "turnover_threshold": "<£632,000",
+    "balance_sheet_threshold": "<£316,000",
+    "employee_threshold": "<10",
+    "last_accounts_date": "2023-12-31",
+    "next_accounts_due": "2025-09-30",
+    "audited": false,
+    "filing_status": "Current"
+  },
+  "recommendation": {
+    "decision": "APPROVE",
+    "risk_tier": "LOW",
+    "rationale": "Legitimate UK micro-entity consultancy with 11-year clean operating history. Zero screening hits. Simple ownership structure with stable director. Limited transparency is normal for micro entities and mitigated by compliance record.",
+    "conditions": [
+      "Request brief business overview document",
+      "Standard transaction monitoring",
+      "Annual KYC review"
+    ],
+    "monitoring_level": "Standard",
+    "review_frequency": "Annual"
+  },
+  "information_gaps": [
+    "Detailed financial statements (micro entity exemption)",
+    "Client references",
+    "Website or public marketing materials"
+  ],
+  "sources": [
+    {
+      "name": "UK Companies House",
+      "type": "primary_registry",
+      "url": "https://find-and-update.company-information.service.gov.uk/company/09368605",
+      "accessed": "2026-01-05"
+    },
+    {
+      "name": "Endole",
+      "type": "corporate_data",
+      "url": "https://open.endole.co.uk/insight/company/09368605-aria-associates-limited",
+      "accessed": "2026-01-05"
+    },
+    {
+      "name": "OFAC SDN Search",
+      "type": "sanctions_database",
+      "url": "https://ofac.treasury.gov/sanctions-list-search-tool",
+      "accessed": "2026-01-05"
+    },
+    {
+      "name": "UK HMT Sanctions",
+      "type": "sanctions_database",
+      "url": "https://www.gov.uk/government/publications/the-uk-sanctions-list",
+      "accessed": "2026-01-05"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "KYC Analysis Output",
+  "type": "object",
+  "required": ["meta", "entity", "risk_assessment"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "properties": {
+        "report_id": { "type": "string", "pattern": "^KYC-\\d{8}-\\d{4}$" },
+        "analysis_date": { "type": "string", "format": "date" },
+        "analyst": { "type": "string" }
+      }
+    },
+    "entity": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "aliases": { "type": "array", "items": { "type": "string" } },
+        "type": { "type": "string" },
+        "jurisdiction": { "type": "string" },
+        "formation_date": { "type": "string" },
+        "status": { "type": "string" }
+      }
+    },
+    "ownership": {
+      "type": "object",
+      "properties": {
+        "beneficial_owners": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "ownership_percentage": { "type": ["number", "null"] },
+              "pep_status": { "type": "boolean" }
+            }
+          }
+        },
+        "subsidiaries": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "key_personnel": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "role": { "type": "string" },
+          "pep_status": { "type": "boolean" }
+        }
+      }
+    },
+    "business_profile": {
+      "type": "object",
+      "properties": {
+        "industry": { "type": "string" },
+        "activities": { "type": "array", "items": { "type": "string" } },
+        "geographic_presence": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "risk_assessment": {
+      "type": "object",
+      "required": ["overall_rating", "red_flags"],
+      "properties": {
+        "overall_rating": { "type": "string", "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"] },
+        "sanctions_exposure": { "type": "string", "enum": ["CLEAR", "POSSIBLE", "CONFIRMED"] },
+        "pep_exposure": { "type": "string", "enum": ["NONE", "INDIRECT", "DIRECT"] },
+        "adverse_media": { "type": "string", "enum": ["NONE", "MINOR", "SIGNIFICANT", "SEVERE"] },
+        "litigation_risk": { "type": "string", "enum": ["LOW", "MEDIUM", "HIGH"] },
+        "regulatory_risk": { "type": "string", "enum": ["LOW", "MEDIUM", "HIGH"] },
+        "red_flags": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "sources": { "type": "array", "items": { "type": "string" } },
+    "information_gaps": { "type": "array", "items": { "type": "string" } },
+    "recommendations": { "type": "array", "items": { "type": "string" } }
+  }
+}

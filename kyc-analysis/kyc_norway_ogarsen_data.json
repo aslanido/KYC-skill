@@ -1,0 +1,274 @@
+{
+  "report_metadata": {
+    "report_id": "KYC-2026-0105-001",
+    "report_date": "2026-01-05",
+    "analyst": "Claude KYC Analysis",
+    "version": "1.0"
+  },
+  "entity": {
+    "legal_name": "Norway Ogarsen International Biotechnology Co., Limited",
+    "trading_names": [],
+    "company_number": "14865342",
+    "jurisdiction": "United Kingdom",
+    "incorporation_date": "2023-05-12",
+    "entity_type": "Private Limited Company",
+    "status": "Active",
+    "sic_codes": ["99999"],
+    "sic_descriptions": ["Dormant Company, No Commercial Activity"],
+    "registered_address": {
+      "line1": "4D Salisbury Road",
+      "city": "Weston-Super-Mare",
+      "county": "Somerset",
+      "postal_code": "BS22 8EW",
+      "country": "United Kingdom"
+    },
+    "trading_address": null,
+    "website": null,
+    "phone": null,
+    "email": null
+  },
+  "ownership": {
+    "structure_type": "Single Owner",
+    "ubos": [
+      {
+        "name": "Qichao Tang",
+        "title": "Mr.",
+        "dob_year": 1970,
+        "dob_month": 1,
+        "nationality": "Chinese",
+        "country_of_residence": "China",
+        "address": {
+          "line1": "Taihua Building, Room 503",
+          "city": "Qingzhou City",
+          "region": "Weifang City",
+          "postal_code": "262500",
+          "country": "China"
+        },
+        "ownership_percentage": "75%+",
+        "voting_rights_percentage": "75%+",
+        "control_type": ["shares", "voting_rights", "appoint_remove_directors"],
+        "pep_status": false,
+        "sanctions_hit": false,
+        "adverse_media": false
+      }
+    ],
+    "corporate_shareholders": [],
+    "ownership_opacity_score": 70
+  },
+  "directors": [
+    {
+      "name": "Qichao Tang",
+      "title": "Mr.",
+      "role": "Director",
+      "appointed_date": "2023-05-12",
+      "nationality": "Chinese",
+      "country_of_residence": "China",
+      "dob_year": 1970,
+      "dob_month": 1,
+      "other_directorships": [
+        {
+          "company_name": "Norway Ogarsen International Biotechnology Co., Ltd.",
+          "company_number": "12498694",
+          "status": "Dissolved",
+          "incorporated": "2020-03-04",
+          "dissolved": "2021-09-07"
+        }
+      ],
+      "sanctions_hit": false,
+      "pep_status": false,
+      "adverse_media": false
+    }
+  ],
+  "screening_results": {
+    "sanctions": {
+      "ofac_sdn": false,
+      "un_sanctions": false,
+      "eu_sanctions": false,
+      "uk_hmt": false,
+      "other_lists": false,
+      "screening_date": "2026-01-05",
+      "entities_screened": ["Norway Ogarsen International Biotechnology Co., Limited", "Qichao Tang"]
+    },
+    "pep": {
+      "peps_identified": false,
+      "details": []
+    },
+    "adverse_media": {
+      "hits_found": false,
+      "categories_checked": ["fraud", "money_laundering", "corruption", "terrorism", "regulatory_action", "litigation"],
+      "details": []
+    },
+    "enforcement": {
+      "actions_found": false,
+      "details": []
+    }
+  },
+  "red_flags": [
+    {
+      "id": "RF001",
+      "severity": "critical",
+      "category": "business_legitimacy",
+      "title": "Serial Incorporation Pattern",
+      "description": "Predecessor company with identical name and same director was dissolved in 2021. Current entity incorporated 2023 with same dormant pattern. No explanation for cycle.",
+      "evidence": "Companies House records show company 12498694 dissolved Sept 2021, company 14865342 incorporated May 2023"
+    },
+    {
+      "id": "RF002",
+      "severity": "critical",
+      "category": "business_legitimacy",
+      "title": "No Legitimate Business Purpose",
+      "description": "Entity has been dormant since incorporation with zero commercial activity. No products, services, employees, or revenue.",
+      "evidence": "SIC code 99999, dormant accounts filed"
+    },
+    {
+      "id": "RF003",
+      "severity": "high",
+      "category": "misrepresentation",
+      "title": "Misleading Geographic Name",
+      "description": "Company name includes 'Norway' but entity has zero connection to Norway. UK-registered with Chinese owner. Name appears designed to create false impression of Nordic origin.",
+      "evidence": "Company registered in UK, owner in China, no Norway connection identified"
+    },
+    {
+      "id": "RF004",
+      "severity": "medium",
+      "category": "transparency",
+      "title": "Virtual Office Address",
+      "description": "Registered address is shared with numerous unrelated companies, indicating virtual office or company formation agent.",
+      "evidence": "Address at 4D Salisbury Road shared with multiple entities"
+    },
+    {
+      "id": "RF005",
+      "severity": "medium",
+      "category": "control",
+      "title": "Foreign Control Without Local Nexus",
+      "description": "100% owned and controlled by Chinese national residing in China. No UK-resident directors or personnel. Unclear business rationale for UK incorporation.",
+      "evidence": "PSC and sole director is Qichao Tang, resident in China"
+    },
+    {
+      "id": "RF006",
+      "severity": "medium",
+      "category": "transparency",
+      "title": "Information Opacity",
+      "description": "No website, phone, email, or public footprint. Cannot independently verify any claims about the entity.",
+      "evidence": "No contact information available in public records"
+    }
+  ],
+  "risk_assessment": {
+    "overall_rating": "HIGH",
+    "overall_score": 75,
+    "score_breakdown": {
+      "ownership_transparency": {
+        "weight": 0.20,
+        "score": 70,
+        "weighted_score": 14
+      },
+      "business_legitimacy": {
+        "weight": 0.25,
+        "score": 90,
+        "weighted_score": 22.5
+      },
+      "jurisdictional_risk": {
+        "weight": 0.15,
+        "score": 40,
+        "weighted_score": 6
+      },
+      "principal_background": {
+        "weight": 0.20,
+        "score": 50,
+        "weighted_score": 10
+      },
+      "red_flag_severity": {
+        "weight": 0.20,
+        "score": 85,
+        "weighted_score": 17
+      }
+    },
+    "adjustments": [
+      {
+        "reason": "Serial incorporation pattern (prior dissolved entity)",
+        "points": 5
+      }
+    ],
+    "risk_factors": [
+      "Shell company indicators",
+      "Misleading company name",
+      "Serial dormant incorporation",
+      "No legitimate business activity",
+      "Foreign control with no local presence",
+      "Virtual office address"
+    ],
+    "mitigating_factors": [
+      "No sanctions hits",
+      "No adverse media found",
+      "UK jurisdiction has strong AML framework",
+      "Accounts filed on time"
+    ]
+  },
+  "financial_profile": {
+    "status": "dormant",
+    "revenue": null,
+    "assets": null,
+    "liabilities": null,
+    "last_accounts_date": "2025-05-31",
+    "next_accounts_due": "2027-02-28",
+    "audited": false
+  },
+  "predecessor_entities": [
+    {
+      "legal_name": "Norway Ogarsen International Biotechnology Co., Ltd.",
+      "company_number": "12498694",
+      "jurisdiction": "United Kingdom",
+      "incorporation_date": "2020-03-04",
+      "dissolution_date": "2021-09-07",
+      "status": "Dissolved",
+      "connection": "Same director (Qichao Tang), similar name, also dormant"
+    }
+  ],
+  "recommendation": {
+    "decision": "DECLINE",
+    "rationale": "Entity exhibits classic shell company characteristics with no identifiable legitimate business purpose. Serial incorporation pattern with prior dissolved entity. Misleading name with no connection to stated geography. No business activity in 2+ years of existence.",
+    "conditions_if_proceed": [
+      "Written explanation of dissolution/recreation cycle",
+      "Detailed business plan with verifiable milestones",
+      "Explanation of 'Norway' in company name",
+      "Source of funds documentation",
+      "In-person meeting with UBO",
+      "Enhanced transaction monitoring",
+      "90-day activity review"
+    ]
+  },
+  "information_gaps": [
+    "Actual business purpose",
+    "Source of funds",
+    "Reason for predecessor dissolution",
+    "Connection to 'Norway' in name",
+    "Criminal/civil records for UBO in China",
+    "Any legitimate business activity"
+  ],
+  "sources": [
+    {
+      "name": "UK Companies House (via Endole)",
+      "type": "primary_registry",
+      "url": "https://open.endole.co.uk/insight/company/14865342-norway-ogarsen-international-biotechnology-co-limited",
+      "accessed": "2026-01-05"
+    },
+    {
+      "name": "Clarity Project",
+      "type": "corporate_data",
+      "url": "https://clarity-project.co.uk/company/14865342",
+      "accessed": "2026-01-05"
+    },
+    {
+      "name": "CheckCompany UK",
+      "type": "corporate_data",
+      "url": "https://www.checkcompany.co.uk/company/14865342/",
+      "accessed": "2026-01-05"
+    },
+    {
+      "name": "BizStats UK",
+      "type": "corporate_data",
+      "url": "https://www.bizstats.co.uk/ltd/norway-ogarsen-international-biotechnology-co-ltd-12498694/",
+      "accessed": "2026-01-05"
+    }
+  ]
+}
